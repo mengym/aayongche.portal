@@ -1,0 +1,68 @@
+<?php use Helper\Html; ?>
+<?= Html::css('/css/login/style.css') ?>
+<div class="container">
+    <div class="logo">
+        <a href="http://www.aayongche.com/">
+            <img src="/img/logo.png" alt="AA用车" width="180">
+        </a>
+        <b class="login"></b>
+    </div>
+    <form method="post" onsubmit="return false;">
+        <input type="hidden" id="uuid" name="uuid" value="">
+
+        <div class="container">
+            <div class="login_center">
+                <div class="center-bg clearfix">
+                    <img class="main_img" src="/img/index_center_bg.png">
+
+                    <div id="login_form">
+                        <div class="control-group ">
+                            <label class="control-label" for="username">用户名/已验证手机</label>
+
+                            <div class="controls">
+                                <input class="text" id="username" type="text">
+                                <span class="help-inline" style="display: none;">请输入用户名/已验证手机</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group ">
+                            <label class="control-label" for="password">密码</label>
+
+                            <div class="controls">
+                                <input class="text" id="password" type="text">
+                                <span class="help-inline" style="display: none;">请输入密码</span>
+                            </div>
+                        </div>
+                        <div class="control-group ">
+                            <label class="control-label" for="checkcode">验证码</label>
+
+                            <div class="controls">
+                                <input class="check" id="checkcode" type="text">
+                                <img class="check_img" src="/img/check_img.png" width="90" height="30">
+                                <label class="check_help">看不清？
+                                    <a href="javascript:void(0)" class="flk13" onclick="">换一张</a>
+                                </label>
+                                <span class="help-inline" style="display: none;">请输入验证码</span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="checkbox">
+                                <input type="checkbox">自动登录
+                                <a href="http://safe.jd.com/findPwd/index.action" class="">忘记密码?</a>
+                            </label>
+                        </div>
+                        <div class="control-group">
+                            <button onclick='javascript:document.location.href="/order/list"'
+                                    class="btn btn-large btn-block btn-primary" type="button">登 录
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-label free-regist">
+                <span><a href="/login/register">免费注册</a></span>
+            </div>
+
+        </div>
+    </form>
+</div>

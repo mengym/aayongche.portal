@@ -1,0 +1,51 @@
+<?php use Helper\Html; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AA用车</title>
+    <?= Html::importJquery(); ?>
+    <?= Html::importBootstrap(); ?>
+    <?= Html::importFontawesome(); ?>
+    <?= Html::css('/css/common.css') ?>
+</head>
+<body>
+<div id="top_bar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="./index.html">AA用车</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li>
+                        <a href="./index.html">首页</a>
+                    </li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li><a href="/order/list">我的订单</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="/finance/transaction">我的账户</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#">帮助中心</a></li>
+                    <li class="divider-vertical"></li>
+                    <li><a href="#"><i class="icon-phone-sign icon-large"></i> 400-010-6767</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<?php echo $_content_; ?>
+<footer>
+    <div class="container">
+        <div class="text-center">
+            <div class="copyright">Copyright©2013&nbsp;&nbsp;AA用车 aayongche.com&nbsp;版权所有</div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

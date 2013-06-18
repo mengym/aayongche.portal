@@ -1,0 +1,40 @@
+<?php use Helper\Html; ?>
+<?= Html::css('/css/finance/style.css') ?>
+<div class="alert alert-success clearfix">
+    <div class="clearfix overage">
+        <h4>您已申请账户余额充值，请立即在线支付！</h4>
+        <ul class="inline">
+            <li>充值单号：123456</li>
+            <li>|</li>
+            <li>应付金额：<span class="label  label-important">12元</span></li>
+        </ul>
+        <div class="muted">
+            <small>立即支付12元，即可完成订单。 请您在24小时内完成支付，否则订单会被自动取消。</small>
+        </div>
+    </div>
+</div>
+<div id="recharge">
+    <div class="popover span9">
+        <h3 class="popover-title">充值方式确认</h3>
+
+        <div class="popover-content">
+            <div class="commit">
+                <div class="muted">您已选择的支付方式：</div>
+                <ul class="thumbnails inline">
+                    <li>
+                        <a href="#" class="thumbnail">
+                            <img alt="中国工商银行" style="width: 147px; height: 37px;" src="/img/bank/icbc.png">
+                        </a>
+                    </li>
+                    <li>
+                        <div class="reselect"><a href="/finance/recharge/select">[重新选择]</a></div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="form-actions span8">
+            <a href="/finance/recharge/select" class="btn btn-large btn-danger" type="button">立即支付</a>
+        </div>
+    </div>
+</div>

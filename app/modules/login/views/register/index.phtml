@@ -1,0 +1,104 @@
+<?php use Helper\Html; ?>
+<?= Html::css('/css/login/style.css') ?>
+<div class="container main">
+    <div class="logo">
+        <a href="http://www.aayongche.com/">
+            <img src="/img/logo.png" alt="AA用车" width="180">
+        </a>
+        <b class="regist"></b>
+    </div>
+    <form method="post" onsubmit="return false;">
+        <input type="hidden" id="uuid" name="uuid" value="">
+
+        <div class="container">
+            <div class="nav-label user-reg active">
+                <span><a href="/login/register">个人用户</a></span>
+            </div>
+            <div class="nav-label company-reg">
+                <span><a href="/login/register/company">企业用户</a></span>
+            </div>
+            <div class="login_center">
+                <div class="center-bg clearfix">
+                    <div class="span6">
+                        <div id="register_form" class="form-horizontal">
+                            <div class="control-group ">
+                                <label class="control-label" for="username">手机号</label>
+
+                                <div class="controls">
+                                    <input class="text" id="username" type="text"><b>*</b>
+                                    <span class="help-inline" style="display: none;">请输入用户名/已验证手机</span>
+                                </div>
+                            </div>
+                            <div class="control-group ">
+                                <label class="control-label" for="checkcode">验证码</label>
+
+                                <div class="controls">
+                                    <input class="input-small" id="checkcode" type="text"><b>*</b>
+                                    <button type="button" class="btn btn-info">获取验证码</button>
+                                    <span class="help-inline" style="display: none;">请输入验证码</span>
+                                </div>
+                            </div>
+                            <div class="control-group ">
+                                <label class="control-label" for="password">密码</label>
+
+                                <div class="controls">
+                                    <input class="text" id="password" type="text"><b>*</b>
+                                    <span class="help-inline" style="display: none;">请输入密码</span>
+                                </div>
+                            </div>
+                            <div class="control-group ">
+                                <label class="control-label" for="password">确认密码</label>
+
+                                <div class="controls">
+                                    <input class="text" id="password" type="text"><b>*</b>
+                                    <span class="help-inline" style="display: none;">请输入确认密码</span>
+                                </div>
+                            </div>
+                            <div class="control-group ">
+                                <label class="control-label" for="password">用户姓名</label>
+
+                                <div class="controls">
+                                    <input class="text" id="password" type="text">
+                                    <span class="help-inline" style="display: none;">请输入确认密码</span>
+                                </div>
+                            </div>
+                            <div class="control-group ">
+                                <label class="control-label" for="password">性别</label>
+
+                                <div class="controls">
+                                    <label class="radio inline">
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1"
+                                               checked> <i class="icon-male"></i> 先生
+                                    </label>
+                                    <label class="radio inline">
+                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> <i
+                                            class="icon-female"></i> 女士
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <div class="controls">
+                                    <label class="checkbox">
+                                        <input type="checkbox" checked>我以阅读
+                                        <a href="http://safe.jd.com/findPwd/index.action">《AA用车用户注册协议》</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button onclick='javascript:document.location.href="/order/list"'
+                                            class="btn btn-large btn-block btn-danger" type="button">注 册
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6">
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</form>
+</div>

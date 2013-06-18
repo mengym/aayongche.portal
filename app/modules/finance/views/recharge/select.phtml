@@ -1,0 +1,78 @@
+<?php use Helper\Html; ?>
+<?= Html::css('/css/finance/style.css') ?>
+<div class="alert alert-success clearfix">
+    <div class="clearfix overage">
+        <h4>您已申请账户余额充值，请立即在线支付！</h4>
+        <ul class="inline">
+            <li>充值单号：123456</li>
+            <li>|</li>
+            <li>应付金额：<span class="label  label-important">12元</span></li>
+        </ul>
+    </div>
+</div>
+<div id="recharge">
+    <div class="popover span9">
+        <h3 class="popover-title">请选择充值方式</h3>
+
+        <div class="popover-content">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#">网上银行</a>
+                </li>
+                <li><a href="#">拉卡拉</a></li>
+                <li><a href="#">支付宝</a></li>
+            </ul>
+            <div class="span8">
+                <ul class="thumbnails">
+                    <li>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <a href="#" class="thumbnail">
+                            <img alt="中国工商银行" style="width: 147px; height: 37px;" src="/img/bank/icbc.png">
+                        </a>
+                    </li>
+                    <li>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <a href="#" class="thumbnail">
+                            <img alt="中国建设银行" style="width: 147px; height: 37px;" src="/img/bank/ccb.png">
+                        </a>
+                    </li>
+                    <li>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <a href="#" class="thumbnail">
+                            <img alt="招商银行" style="width: 147px; height: 37px;" src="/img/bank/cmb.png">
+                        </a>
+                    </li>
+                    <li>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <a href="#" class="thumbnail">
+                            <img alt="中国农业银行" style="width: 147px; height: 37px;" src="/img/bank/abc.png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="span8">
+                <ul class="thumbnails">
+                    <li>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <a href="#" class="thumbnail">
+                            <img alt="拉卡拉" style="width: 145px; height: 40px;" src="/img/bank/lkl.png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="span8">
+                <ul class="thumbnails">
+                    <li>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <a href="#" class="thumbnail">
+                            <img alt="支付宝" style="width: 96px; height: 37px;" src="/img/bank/alipay.png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="form-actions span8">
+            <a href="/finance/recharge/commit" class="btn btn-large btn-danger" type="button">确认支付方式</a>
+        </div>
+    </div>
+</div>

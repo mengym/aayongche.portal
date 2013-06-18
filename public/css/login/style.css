@@ -1,0 +1,216 @@
+body {
+    background: #f2f2f2;
+}
+
+a:link {
+    color: #333;
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+.logo {
+    padding: 10px 0;
+    float: none;
+    margin: 0;
+    position: relative;
+}
+
+.logo b.login {
+    position: absolute;
+    width: 150px;
+    height: 45px;
+    top: 15px;
+    left: 200px;
+    background: url('/img/login-word.png') no-repeat;
+}
+
+.logo b.regist {
+    position: absolute;
+    width: 150px;
+    height: 45px;
+    top: 15px;
+    left: 200px;
+    background: url('/img/login-regist.png') no-repeat;
+}
+
+form div.container {
+    position: relative;
+    margin: 60px auto 0;
+}
+
+.login_center {
+    z-index: 50;
+    background: #e8e8e8;
+    padding: 5px;
+    position: relative;
+    border: 1px solid #e1e1e1;
+}
+
+.center-bg {
+    background-color: white;
+}
+
+.center-bg .main_img {
+    height: 300px;
+    margin: 20px;
+    float: left;
+}
+
+form #login_form {
+    float: right;
+    overflow: hidden;
+    margin: 20px 40px 0 0;
+}
+
+form #register_form {
+    overflow: hidden;
+    margin: 20px 40px 0 0;
+}
+
+form #register_form .control-group .controls b {
+    color: red;
+    margin: 5px;
+}
+
+#login_form .control-group {
+    margin-bottom: 4px;
+}
+
+#login_form .control-group label {
+    height: 20px;
+    line-height: 20px;
+    display: block;
+    margin-bottom: 2px;
+    font-size: 14px;
+    color: #999999;
+}
+
+#login_form .control-group label.link {
+    margin-left: 20px;
+    margin-top: 6px;
+    margin-bottom: 5px;
+}
+
+#login_form .control-group .controls {
+    height: 40px;
+}
+
+#login_form .control-group .checkbox {
+    font-size: 12px;
+}
+
+#login_form .control-group .checkbox a {
+    margin-left: 20px;
+}
+
+#login_form .control-group .controls .help-inline {
+    font-size: 12px;
+}
+
+#login_form .control-group .controls .text {
+    width: 293px;
+    font-size: 14px;
+    font-family: arial, "宋体";
+}
+
+#login_form .control-group .controls .check {
+    width: 90px;
+    font-size: 14px;
+    font-family: arial, "宋体";
+}
+
+#login_form .control-group .controls .check_img {
+    margin-left: 0px;
+}
+
+#login_form .control-group .controls .check_help {
+    display: inline-block;
+    font-size: 12px;
+}
+
+#login_form .control-group .controls .check_help a {
+    color: #005AA0;
+}
+
+#login_form .control-group .controls .input-append, #login_form .control-group .controls input {
+    margin-bottom: 0px;
+}
+
+#login_form .control-group .help-inline {
+    background: #ffebec;
+    border: 1px solid #ffbdbf;
+    width: 300px;
+}
+
+.nav-label {
+    width: 115px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    -moz-border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+    padding: 5px 5px 0px;
+    background: #e8e8e8;
+}
+
+.nav-label span {
+    text-align: center;
+    font-size: 14px;
+    display: block;
+    color: #FFF;
+    width: 115px;
+    height: 32px;
+    -moz-border-radius: 3px 3px 0 0;
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
+
+.nav-label span a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.free-regist {
+    position: absolute;
+    right: 42px;
+    top: -37px;
+}
+
+.free-regist span {
+    background: #7cbe56;
+}
+
+.user-reg {
+    position: absolute;
+    left: 300px;
+    top: -37px;
+    z-index: 40;
+}
+
+.user-reg span {
+    background: #FFFFFF;
+    height: 40px;
+}
+
+.company-reg {
+    position: absolute;
+    left: 430px;
+    top: -37px;
+    z-index: 40;
+}
+
+.company-reg span {
+    background: #FFFFFF;
+    height: 40px;
+}
+
+.nav-label.active {
+    z-index: 100;
+}
+
+.nav-label.active span a {
+    color: red;
+}

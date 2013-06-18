@@ -1,0 +1,52 @@
+<?php use Helper\Html; ?>
+<?= Html::css('/css/finance/style.css') ?>
+<div id="recharge">
+    <div class="popover span9">
+        <h3 class="popover-title">请输入充值金额</h3>
+
+        <div class="popover-content">
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="username">充值账户:</label>
+
+                    <div class="controls">
+                        <input type="text" id="username" disabled="true" value="13520076669" class="input-medium">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="password">充值金额:</label>
+
+                    <div class="controls">
+                        <input type="text" id="password" value="" class="input-medium"> (元)
+                        <p class="muted">
+                            <small>请注意：支持国内主流银行储蓄卡充值，在线支付成功后，充值金额会在1分钟内到账.</small>
+                        </p>
+                        <div class="well well-small span4">
+                            <small><i class="icon-phone-sign icon-large"></i> 客服电话：400-010-6767 服务时间：xx:00-xx:00
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <a href="/finance/recharge/select" class="btn btn-large btn-danger span2" type="button">下一步</a>
+                    </div>
+                </div>
+            </form>
+
+            <div class="span8">
+                <div class="span1"></div>
+                <div class="alert span7">
+                    <small>
+                        <h5>温馨提示：</h5>
+                        1. 充值成功后，余额可能存在延迟现象，一般1到5分钟会内到账，如有问题，请咨询客服；<br>
+                        2. 充值金额输入值必须是不小于10且不大于50000的正整数；<br>
+                        3. 您只能用储蓄卡在线支付充值金额的钱，如遇到任何支付问题可以查看在线支付帮助；<br>
+                        4. 充值完成后，您可以进入账户充值记录页面进行查看余额充值状态。<br>
+                    </small>
+                </div>
+                <div class="span2"></div>
+            </div>
+        </div>
+    </div>
+</div>

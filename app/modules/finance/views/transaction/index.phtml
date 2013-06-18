@@ -1,0 +1,61 @@
+<?php use Helper\Html; ?>
+<?= Html::css('/css/finance/style.css') ?>
+<div class="alert alert-success clearfix">
+    <div class="clearfix overage">
+        <h4 class="pull-left"> 账户余额: <b>10.00</b> 元</h4>
+        <a href="/finance/recharge" type="button" class="btn btn-success pull-right">充 值</a>
+    </div>
+</div>
+<div class="alert">
+    <div class="form-inline">
+        <fieldset>
+            <legend>交易记录查询</legend>
+            <label>预定时间:</label>
+            <input type="text" placeholder="开始时间"> 至 <input type="text" placeholder="结束时间">
+            <button type="submit" class="btn btn-warning">查 询</button>
+        </fieldset>
+    </div>
+</div>
+<div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>流水号</th>
+            <th>发生时间</th>
+            <th>收入(元)</th>
+            <th>支出(元)</th>
+            <th>服务类型</th>
+            <th>备注</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>100001</td>
+            <td>2013-6-17 14:18:30</td>
+            <td>50</td>
+            <td>0</td>
+            <td>用户充值</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>100002</td>
+            <td>2013-6-17 14:18:30</td>
+            <td>0</td>
+            <td>40</td>
+            <td>用户消费</td>
+            <td>订单号 1023412</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="pagination pagination-right">
+        <ul>
+            <li><a href="#">上一页</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">下一页</a></li>
+        </ul>
+    </div>
+</div>

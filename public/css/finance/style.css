@@ -1,0 +1,57 @@
+.overage {
+    padding: 10px;
+}
+
+.overage h4 {
+    margin: 5px;
+}
+
+.overage ul {
+    margin: 10px 5px;
+    font-size: 12px;
+    list-style: none;
+    color: #000;
+}
+
+.overage div {
+    margin: 10px 5px 0;
+    font-size: 12px;
+}
+
+.overage ul li {
+    padding: 0 10px 0 0;
+}
+
+.thumbnails li input {
+    margin-top: 15px;
+    float: left;
+}
+
+.thumbnails .thumbnail {
+    margin-left: 10px;
+    float: right;
+}
+
+#recharge .popover {
+    position: relative;
+    display: inline;
+    max-width: 800px;
+    margin-left: 0px;
+}
+
+#recharge .well {
+    margin-bottom: 0px;
+}
+
+#recharge .commit {
+    margin: 20px 0 20px 50px;
+}
+
+#recharge .commit .muted {
+    margin-bottom: 10px;
+}
+
+#recharge .reselect {
+    font-size: 12px;
+    margin: 10px 0 0 10px;
+}
