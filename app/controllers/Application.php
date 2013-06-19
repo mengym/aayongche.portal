@@ -1,7 +1,5 @@
 <?php
 
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
-
 /**
  * The main application controller.
  *
@@ -14,7 +12,7 @@ class ApplicationController extends Yaf\Controller_Abstract
      * The name of layout file.
      *
      * The name of layout file to be used for this controller ommiting extension.
-     * Layout class will use extension from application config ini. 
+     * Layout class will use extension from application config ini.
      *
      * @var string
      */
@@ -30,7 +28,7 @@ class ApplicationController extends Yaf\Controller_Abstract
 
     /**
      * A Yaf\Config\Ini object that contains application configuration data.
-     * 
+     *
      * @var Yaf\Config\Ini
      */
     private $config;
@@ -38,7 +36,7 @@ class ApplicationController extends Yaf\Controller_Abstract
     /**
      * Initialize layout and session.
      *
-     * In this method can be initialized anything that could be usefull for 
+     * In this method can be initialized anything that could be usefull for
      * the controller.
      *
      * @return void
@@ -62,13 +60,13 @@ class ApplicationController extends Yaf\Controller_Abstract
     }
 
     /**
-     * When assign a public property to controller, this property will be 
+     * When assign a public property to controller, this property will be
      * available to action view template too.
      *
      * @param string $name  the name of the property
-     * @param mixed  $value the value of the property
+     * @param mixed $value the value of the property
      *
-     * @return void 
+     * @return void
      */
     public function __set($name, $value)
     {
@@ -88,11 +86,11 @@ class ApplicationController extends Yaf\Controller_Abstract
      */
     public function forwardTo404()
     {
-        $this->forward('Index','application','notFound');
-        $this->getView()->setScriptPath($this->getConfig()->application->directory 
-            . "/views");
+        $this->forward('Index', 'application', 'notFound');
+        $this->getView()->setScriptPath($this->getConfig()->application->directory
+        . "/views");
         header('HTTP/1.0 404 Not Found');
-        return false;       
+        return false;
     }
 
     /**
@@ -104,4 +102,27 @@ class ApplicationController extends Yaf\Controller_Abstract
     {
     }
 
+    /**
+     * 指定返回的Response类型为Json
+     */
+    public function isJsonResponse()
+    {
+        Yaf\Dispatcher::getInstance()->autoRender(FALSE);
+        header('Cache-Control: no-cache, must-revalidate');
+        header('Content-type: application/json');
+    }
+
+    /**
+     * 初始化数据库连接
+     */
+    protected function initDbConnection()
+    {
+        require_once(APP_PATH . '/app/models/ActiveRecord.php');
+        ActiveRecord\Config::initialize(function ($cfg) {
+            $cfg->set_model_directory(APP_PATH . '/app/models');
+            $cfg->set_connections(array('main' => 'mysql://root:@localhost/aayongche_main;charset=utf8'));
+            $cfg->set_default_connection('main');
+        });
+        require_once(APP_PATH . '/app/models/User.php');
+    }
 }

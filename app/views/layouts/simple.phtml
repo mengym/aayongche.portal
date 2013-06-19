@@ -8,6 +8,7 @@
     <?= Html::importBootstrap(); ?>
     <?= Html::importFontawesome(); ?>
     <?= Html::css('/css/common.css') ?>
+    <?= Html::javascript('/js/validate.js') ?>
 </head>
 <body>
 <div id="top_bar" class="navbar navbar-fixed-top">
@@ -27,13 +28,24 @@
                     </li>
                 </ul>
                 <ul class="nav pull-right">
-                    <li><a href="/order/list">我的订单</a></li>
+                    <?php if (Yaf\Session::getInstance()->user_id == '') { ?>
+                        <li><a href="/login/">[登录]</a></li>
+                        <li class="divider-vertical"></li>
+                        <li><a href="/login/register">[免费注册]</a></li>
+                    <? } else { ?>
+                        <li><a href="">欢迎：<?= Yaf\Session::getInstance()->user_name; ?>来到AA用车!</a></li>
+                    <? } ?>
                     <li class="divider-vertical"></li>
-                    <li><a href="/finance/transaction">我的账户</a></li>
+                    <li><a href="/finance/transaction">我的订单</a></li>
                     <li class="divider-vertical"></li>
                     <li><a href="#">帮助中心</a></li>
                     <li class="divider-vertical"></li>
                     <li><a href="#"><i class="icon-phone-sign icon-large"></i> 400-010-6767</a></li>
+                    <?php if (Yaf\Session::getInstance()->user_id != '') { ?>
+                        <li class="divider-vertical"></li>
+                        <li><a href="/login/authentication/logout">登出</a></li>
+                        <li class="divider-vertical"></li>
+                    <? } ?>
                 </ul>
             </div>
         </div>

@@ -74,6 +74,10 @@ form #register_form .control-group .controls b {
     margin: 5px;
 }
 
+#register_form .control-group .checkbox a:link {
+    color: #005AA0;
+}
+
 #login_form .control-group {
     margin-bottom: 4px;
 }
