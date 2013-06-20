@@ -25,14 +25,13 @@ class RegisterController extends ApplicationController
         $user->name = $post['name'];
         $user->sex = $post['sex'];
         $user->regist_time = time();
-        $user_id = $user->save();
-        $session = Yaf\Session::getInstance();
-        $session->user_id = $user_id;
-        $session->user_name = $post['name'];
-        $session->user_sex = $post['sex'];
-        $session->code = '';
+        $user->save();
+        $user = User::all(array('conditions' => array('mobile = ? and password = ?', $post['mobile'], md5($post['password']))));
+        if (count($user) > 0) {
+            $this->genLoginSession($user);
+        }
         $this->noRender();
-        $this->redirect("/order/list");
+        $this->redirect("/");
     }
 
     /**

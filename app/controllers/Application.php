@@ -105,7 +105,7 @@ class ApplicationController extends Yaf\Controller_Abstract
     /**
      * 指定返回的Response类型为Json
      */
-    public function isJsonResponse()
+    protected function isJsonResponse()
     {
         Yaf\Dispatcher::getInstance()->autoRender(FALSE);
         header('Cache-Control: no-cache, must-revalidate');
@@ -115,7 +115,7 @@ class ApplicationController extends Yaf\Controller_Abstract
     /**
      * 指定返回的Response类型为Json
      */
-    public function noRender()
+    protected function noRender()
     {
         Yaf\Dispatcher::getInstance()->autoRender(FALSE);
     }
@@ -132,5 +132,40 @@ class ApplicationController extends Yaf\Controller_Abstract
             $cfg->set_default_connection('main');
         });
         require_once(APP_PATH . '/app/models/User.php');
+    }
+
+    /**
+     * 初始化用户 Login Session
+     * @param $user
+     */
+    protected function genLoginSession($user)
+    {
+        $session = Yaf\Session::getInstance();
+        $session->user_id = $user[0]->user_id;
+        $session->user_name = $user[0]->name;
+        $session->mobile = $user[0]->mobile;
+        $session->user_sex = $user[0]->sex;
+        //删除用户的验证码
+        $session->code = '';
+    }
+
+    /**
+     * 删除用户Session 信息 登出
+     */
+    protected function logoutSession()
+    {
+        $session = Yaf\Session::getInstance();
+        $session->__unset('user_id');
+        $session->__unset('user_name');
+        $session->__unset('mobile');
+        $session->__unset('user_sex');
+    }
+
+    protected function checkLogin()
+    {
+        $session = Yaf\Session::getInstance();
+        if (!isset($session->user_id)) {
+            $this->redirect("/login");
+        }
     }
 }

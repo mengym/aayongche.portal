@@ -7,7 +7,7 @@
         </a>
         <b class="regist"></b>
     </div>
-    <form method="post" action="/login/register/userRegister" onsubmit="return checkLogin();">
+    <form method="post" action="/login/register/userRegister" onsubmit="return checkRegist();">
         <input type="hidden" id="uuid" name="uuid" value="1234">
 
         <div class="container">
@@ -231,7 +231,7 @@
         return true;
     }
 
-    function checkLogin() {
+    function checkRegist() {
         if (checkMobile() && checkCode() && checkPassword() && checkRePassword() && checkName() && checkMobileTarget && checkCodeTarget) {
             return true;
         }

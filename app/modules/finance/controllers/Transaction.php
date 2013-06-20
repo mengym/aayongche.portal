@@ -7,6 +7,7 @@ class TransactionController extends ApplicationController
     public function init()
     {
         parent::init();
+        parent::checkLogin();
     }
 
     public function indexAction()

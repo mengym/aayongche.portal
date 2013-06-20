@@ -7,7 +7,7 @@
         </a>
         <b class="login"></b>
     </div>
-    <form method="post" onsubmit="return false;">
+    <form method="post" action="#">
         <input type="hidden" id="uuid" name="uuid" value="">
 
         <div class="container">
@@ -36,10 +36,10 @@
                             </div>
                         </div>
                         <div class="control-group ">
-                            <label class="control-label" for="checkcode">验证码</label>
+                            <label class="control-label" for="code">验证码</label>
 
                             <div class="controls">
-                                <input class="check" id="checkcode" type="text">
+                                <input class="check" id="code" name="code" type="text" onblur="javascript:checkCode();">
                                 <img class="check_img" src="/other/checkcode/genCheckCodeImg" width="90" height="40">
                                 <label class="check_help">看不清？
                                     <a href="javascript:void(0)" class="flk13" onclick="">换一张</a>
@@ -49,13 +49,13 @@
                         </div>
                         <div class="control-group">
                             <label class="checkbox">
-                                <input type="checkbox">自动登录
+                                <!--<input type="checkbox">自动登录-->
                                 <a href="http://safe.jd.com/findPwd/index.action" class="">忘记密码?</a>
                             </label>
                         </div>
                         <div class="control-group">
-                            <button onclick='javascript:document.location.href="/order/list"'
-                                    class="btn btn-large btn-block btn-primary" type="button">登 录
+                            <button onclick='javascript:checkLogin();' class="btn btn-large btn-block btn-primary"
+                                    type="button">登 录
                             </button>
                         </div>
                     </div>
@@ -66,6 +66,8 @@
     </form>
 </div>
 <script language="javascript">
+    //验证码后台验证标志
+    var checkCodeTarget = false;
     //验证手机号
     function checkMobile() {
         var mobile = $('#mobile').val();
@@ -98,8 +100,46 @@
             $('#password').parent().parent().removeClass('error');
             $('#password').parent().children('span').html('');
             $('#password').parent().children('span').hide();
-            checkRePassword();
         }
         return true;
+    }
+
+    function checkCode() {
+        var code = $('#code').val();
+        if (code == '') {
+            $('#code').parent().parent().addClass('error');
+            $('#code').parent().children('span').html('请输入验证码!');
+            $('#code').parent().children('span').show();
+            return false
+        } else {
+            $.getJSON("/login/authentication/validate?code=" + escape(code) + "&r=" + Math.random(), function (data) {
+                if (data.success == 0) {
+                    $('#code').parent().parent().addClass('error');
+                    $('#code').parent().children('span').html('验证码输入错误!');
+                    $('#code').parent().children('span').show();
+                } else {
+                    $('#code').parent().parent().removeClass('error');
+                    $('#code').parent().children('span').html('');
+                    $('#code').parent().children('span').hide();
+                    checkCodeTarget = true;
+                }
+            })
+        }
+        return true;
+    }
+
+    function checkLogin() {
+        if (checkMobile() && checkCode() && checkPassword() && checkCodeTarget) {
+            $.post("/login/authentication/login", { mobile: $('#mobile').val(), password: $('#password').val(), code: $('#code').val()})
+                .done(function (data) {
+                    if (data.success == 1) {
+                        document.location.href = "/";
+                    } else {
+                        $('#password').parent().parent().addClass('error');
+                        $('#password').parent().children('span').html('您输入的手机号和密码不匹配，请重新输入');
+                        $('#password').parent().children('span').show();
+                    }
+                });
+        }
     }
 </script>
