@@ -1,2 +1,122 @@
-<?php $this->title = "Home";?>
-<h1><?= $heading?></h1>
+<?php use Helper\Html; ?>
+<?= Html::css('/css/style.css') ?>
+<div class="bg">
+    <div class="container top">
+        <div class="span5">
+            <a href="http://www.aayongche.com/">
+                <img src="/img/logo.png" alt="AA用车" width="180">
+            </a>
+        </div>
+        <div class="span6">
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="span12">
+                <div id="myCarousel" class="carousel slide">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <div class="active item">
+                            <div class="banner-content">
+                                <img alt="" src="/img/index_01.png">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="banner-content">
+                                <img alt="" src="/img/index_02.png">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="banner-content">
+                                <img alt="" src="/img/index_03.png">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel nav -->
+                    <div class="carousel-nav">
+                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="download" class="pane-main hide" style="display: block;">
+    <div class="container-main wool">
+        <div class="container">
+            <div class="row tab-buttons-position">
+                <div class="span2">
+                    <div class="tab-buttons">
+                        <h3 class="title">下载安装</h3>
+                        <a href="#aboutUs" class="tab-buttons-title" rel="tooltip" data-original-title="About Us"><i
+                                class="icon-cloud-download"></i></a>
+                    </div>
+                </div>
+                <div class="span2">&nbsp;
+                </div>
+                <div class="span2">&nbsp;
+                </div>
+                <div class="span2">&nbsp;
+                </div>
+                <div class="span2">&nbsp;
+                </div>
+                <div class="span2">&nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12" style="min-height: 200px;">
+                    <div class="span2"></div>
+                    <div class="span3" style="margin: 50px 0 0 0">
+                        <a href="#" class="btn btn-primary"><img src="/img/btn-app-store.png" alt="Get App"></a>
+                    </div>
+                    <div class="span2"></div>
+                    <div class="span3" style="margin: 50px 0 0 0">
+                        <a href="#" class="btn btn-inverse"><img src="/img/btn-app-store.png" alt="Get App"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="aboutUs" class="pane-main hide" style="display: block;">
+    <div class="container-main bg">
+        <div class="container">
+            <div class="row tab-buttons-position">
+                <div class="span2">
+                    <div class="tab-buttons">
+                        <h3 class="title">关于我们</h3>
+                        <a href="#aboutUs" class="tab-buttons-title" rel="tooltip" data-original-title="About Us"><i
+                                class="icon-group"></i></a>
+                    </div>
+                </div>
+                <div class="span2">&nbsp;
+                </div>
+                <div class="span2">&nbsp;
+                </div>
+                <div class="span2">&nbsp;
+                </div>
+                <div class="span2">&nbsp;
+                </div>
+                <div class="span2">&nbsp;
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12" style="min-height: 200px;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    $(function () {
+        $("#myCarousel").carousel({
+            interval: 3000,
+            pause: "hover"
+        });
+    })
+</script>

@@ -113,6 +113,14 @@ class ApplicationController extends Yaf\Controller_Abstract
     }
 
     /**
+     * 指定返回的Response类型为Json
+     */
+    public function noRender()
+    {
+        Yaf\Dispatcher::getInstance()->autoRender(FALSE);
+    }
+
+    /**
      * 初始化数据库连接
      */
     protected function initDbConnection()

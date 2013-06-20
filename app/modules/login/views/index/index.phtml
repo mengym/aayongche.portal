@@ -1,6 +1,6 @@
 <?php use Helper\Html; ?>
 <?= Html::css('/css/login/style.css') ?>
-<div class="container">
+<div class="container top">
     <div class="logo">
         <a href="http://www.aayongche.com/">
             <img src="/img/logo.png" alt="AA用车" width="180">
@@ -17,11 +17,12 @@
 
                     <div id="login_form">
                         <div class="control-group ">
-                            <label class="control-label" for="username">用户名/已验证手机</label>
+                            <label class="control-label" for="mobile">手机号</label>
 
                             <div class="controls">
-                                <input class="text" id="username" type="text">
-                                <span class="help-inline" style="display: none;">请输入用户名/已验证手机</span>
+                                <input class="text" id="mobile" name="mobile" type="text"
+                                       onblur="javascript:checkMobile();">
+                                <span class="help-inline" style="display: none;">请输入手机号</span>
                             </div>
                         </div>
 
@@ -29,7 +30,8 @@
                             <label class="control-label" for="password">密码</label>
 
                             <div class="controls">
-                                <input class="text" id="password" type="text">
+                                <input class="text" id="password" name="password" type="password" maxlength="30"
+                                       onblur="javascript:checkPassword();">
                                 <span class="help-inline" style="display: none;">请输入密码</span>
                             </div>
                         </div>
@@ -38,7 +40,7 @@
 
                             <div class="controls">
                                 <input class="check" id="checkcode" type="text">
-                                <img class="check_img" src="/img/check_img.png" width="90" height="30">
+                                <img class="check_img" src="/other/checkcode/genCheckCodeImg" width="90" height="40">
                                 <label class="check_help">看不清？
                                     <a href="javascript:void(0)" class="flk13" onclick="">换一张</a>
                                 </label>
@@ -59,10 +61,45 @@
                     </div>
                 </div>
             </div>
-            <div class="nav-label free-regist">
-                <span><a href="/login/register">免费注册</a></span>
-            </div>
 
         </div>
     </form>
 </div>
+<script language="javascript">
+    //验证手机号
+    function checkMobile() {
+        var mobile = $('#mobile').val();
+        if (mobile == '') {
+            $('#mobile').parent().parent().addClass('error');
+            $('#mobile').parent().children('span').html('请输入手机号!');
+            $('#mobile').parent().children('span').show();
+            return false
+        } else if (!validateRules.isMobile(mobile)) {
+            $('#mobile').parent().parent().addClass('error');
+            $('#mobile').parent().children('span').html('请输入正确手机号!');
+            $('#mobile').parent().children('span').show();
+            return false;
+        } else {
+            $('#mobile').parent().parent().removeClass('error');
+            $('#mobile').parent().children('span').html('');
+            $('#mobile').parent().children('span').hide();
+        }
+        return true;
+    }
+
+    function checkPassword() {
+        var passwrod = $('#password').val();
+        if (passwrod == '') {
+            $('#password').parent().parent().addClass('error');
+            $('#password').parent().children('span').html('请输入密码!');
+            $('#password').parent().children('span').show();
+            return false
+        } else {
+            $('#password').parent().parent().removeClass('error');
+            $('#password').parent().children('span').html('');
+            $('#password').parent().children('span').hide();
+            checkRePassword();
+        }
+        return true;
+    }
+</script>

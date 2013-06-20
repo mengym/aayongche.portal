@@ -31,12 +31,14 @@ class RegisterController extends ApplicationController
         $session->user_name = $post['name'];
         $session->user_sex = $post['sex'];
         $session->code = '';
+        $this->noRender();
         $this->redirect("/order/list");
     }
 
     /**
      * 验证
      * 1 验证用户手机号是否已注册
+     * 2 检测验证码是否正确
      */
     public function validateAction()
     {

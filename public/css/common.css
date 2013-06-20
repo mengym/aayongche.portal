@@ -1,5 +1,9 @@
 body {
-    margin-top: 50px;
+    margin-top: 30px;
+}
+
+div.top {
+    padding-top: 20px;
 }
 
 .logo {

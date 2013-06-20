@@ -2,7 +2,7 @@
 
 class IndexController extends ApplicationController 
 {
-    protected $layout = 'frontend';
+    protected $layout = 'simple';
 
     public function indexAction() 
     {

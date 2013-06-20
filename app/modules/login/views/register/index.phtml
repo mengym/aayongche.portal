@@ -108,7 +108,7 @@
 
     </form>
 </div>
-<script>
+<script language="javascript">
 
     //手机号后台验证标志
     var checkMobileTarget = false;
@@ -118,7 +118,6 @@
     //验证手机号
     function checkMobile() {
         var mobile = $('#mobile').val();
-        var isMobile = /^(?:13\d|15\d)\d{5}(\d{3}|\*{3})$/;
         if (mobile == '') {
             $('#mobile').parent().parent().addClass('error');
             $('#mobile').parent().children('span').html('请输入手机号!');
